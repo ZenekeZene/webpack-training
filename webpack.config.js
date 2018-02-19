@@ -8,7 +8,15 @@ const config = {
   },
   module: {
     rules: [
-      
+      {
+        test: /\.css$/,
+        use: [
+
+          { loader: 'style-loader' },
+          // The css-loader interprets @import and url() like import/require() and will resolve them.
+          { loader: 'css-loader'}
+        ]
+      }
     ]
   },
   plugins: [
